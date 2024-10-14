@@ -1,11 +1,9 @@
 from django.contrib import admin
-from .models import ProductType, Deliveries
+from .models import Product_type, Deliveries
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('price', 'delivery_cost' )
+    list_display = ('price', 'delivery_cost', 'resale_value', 'product_type', 'date_ordered' )
 
-# class Delivery_Admin(admin.ModelAdmin):
-#     list_display = ('edible', 'non_edible')
-admin.site.register(ProductType)
+admin.site.register(Product_type)
 admin.site.register(Deliveries, ProductAdmin)
 # Register your models here.
